@@ -2,21 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡Feliz Cumpleaños!</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-    <section class="parte-1">
-        <p class="texto1">🎉¡Feliz cumpleaños!💗</p>
-        <div class="cake-gif">
-            <img src="./gifs/gif-torta.gif" alt="Pastel">
-        </div>
-        <p class="texto1">¡haz click en la torta para la sorpresa!</p>
-    </section>
 
     <div id="contenedor-musica">
         <audio id="musica-fondo" loop>
@@ -26,6 +19,14 @@
             🎵
         </button>
     </div>
+
+    <section class="parte-1">
+        <p class="texto1">🎉¡Feliz cumpleaños!💗</p>
+        <div class="cake-gif">
+            <img src="./gifs/gif-torta.gif" alt="Pastel">
+        </div>
+        <p class="texto1">¡haz click en la torta para la sorpresa!</p>
+    </section>
     
     <button id="btn-volver">
         ◀ 
@@ -61,6 +62,9 @@ Espero que tengas un cumpleaños hermoso, que disfrutes muchísimo tu día y que
             </div>
             <div class="envelope-front"></div>
         </div>
+        <p class="tip-recarga">
+        Nota: si quieres volver al inico recarga la página.
+    </p>
     </section>
 
     <script src="script.js" defer></script>
