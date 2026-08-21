@@ -1,0 +1,381 @@
+
+:root {
+    --rosa-pastel: #ffe6f0;   
+    --rosa-medio: #ffb3d9;   
+    --rosa-vibrante: #ff4d94; 
+    --rosa-oscuro: #cc3d76;  
+    --color-texto: #1A1A1A;
+    --fuente-pixel: "Pixelify Sans", sans-serif;
+    --fuente-normal: "Quicksand", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--rosa-pastel);
+    background-image: url('./gifs/gif-estrellas.gif');
+    background-repeat: repeat; 
+    background-size: 300px;
+    background-blend-mode: screen;
+}
+
+/*//////// TORTA ///////*/
+
+.parte-1 {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;          
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cake-gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cake-gif img {
+    width: 250px; 
+    height: auto; 
+    cursor: pointer;
+    filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.25)); 
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.cake-gif img:active {
+    transform: scale(0.95) translate(4px, 4px); /* Se hunde hacia la sombra */
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.3)); /* La sombra se achica */
+}
+
+.texto1 {
+    font-family: var(--fuente-pixel);
+    color: var(--rosa-oscuro);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/*/////////REPRODUCTOR MUSICA///////*/
+
+#contenedor-musica {
+    position: fixed; 
+    top: 20px;       
+    right: 20px;     
+    z-index: 1000;   
+}
+
+#btn-musica {
+    font-family: var(--fuente-pixel);
+    font-size: 1rem; 
+    background-color: var(--rosa-vibrante);
+    color: white;
+    padding: 6px 12px; 
+    cursor: pointer;
+    border: 3px solid var(--rosa-oscuro); 
+    border-radius: 0; 
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); 
+    transition: all 0.1s ease;
+}
+
+#btn-musica:hover {
+    background-color: var(--rosa-oscuro);
+}
+
+#btn-musica:active {
+    transform: translate(2px, 2px); 
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); 
+}
+/*//////// BOTON VOLVER ///////*/
+
+#btn-volver {
+    display: none; /* Lo mantenemos oculto al cargar la página */
+    position: fixed; 
+    bottom: 20px;       
+    left: 20px;     
+    z-index: 1000;   
+    
+    font-family: var(--fuente-pixel);
+    font-size: 1rem; 
+    background-color: var(--rosa-vibrante);
+    color: white;
+    padding: 6px 12px; 
+    cursor: pointer;
+    border: 3px solid var(--rosa-oscuro); 
+    border-radius: 0; 
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); 
+    transition: all 0.1s ease;
+}
+
+#btn-volver:hover {
+    background-color: var(--rosa-oscuro);
+}
+
+#btn-volver:active {
+    transform: translate(2px, 2px); 
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); 
+}
+
+/*//////// FOTOS ///////*/
+
+#parte-2 {
+    display: none; /* Sigue oculto al cargar la página */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.nav-btn {
+    background-color: var(--rosa-vibrante);
+    color: white;
+    font-family: var(--fuente-pixel); /* ¡Aplicamos tu fuente retro! */
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    
+    border: 4px solid var(--rosa-oscuro); /* Borde grueso */
+    border-radius: 0; /* Quitamos lo redondo para que sea cuadrado */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); /* Sombra dura y sólida, no difuminada */
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px; /* Ajuste visual para la fuente pixelada */
+}
+
+.nav-btn:hover {
+    background-color: var(--rosa-medio);
+}
+
+.nav-btn:active {
+    transform: translate(2px, 2px); /* El botón se hunde un poco */
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); /* La sombra se achica */
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px; /* Espacio extra abajo para que parezca polaroid */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de relieve */
+    border-radius: 2px;
+    transform: rotate(-2deg); /* Un ligero giro para que se vea más natural */
+}
+
+.polaroid img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Esto recorta la foto para que sea un cuadrado perfecto sin deformarse */
+    background-color: #ddd; /* Un color de fondo gris mientras no haya foto */
+}
+
+#btn-carta {
+    margin-top: 40px;
+    padding: 12px 30px;
+    font-family: var(--fuente-pixel); /* Usamos tu fuente pixel art */
+    font-size: 1.2rem;
+    background-color: white;
+    color: var(--rosa-oscuro);
+    border: 3px solid var(--rosa-oscuro);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#btn-carta:hover {
+    background-color: var(--rosa-oscuro);
+    color: white;
+}
+
+.titulo-carousel {
+    font-family: var(--fuente-pixel);
+    color: var(--rosa-oscuro);
+    font-weight: bold;
+    font-size: 0.7rem;
+    margin: 0 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/*//////// CARTA ///////*/
+
+#parte3 {
+    display: none; /* Oculto al inicio */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.titulo-carta {
+    font-family: var(--fuente-pixel);
+    color: var(--rosa-oscuro);
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.15); /* Sombra sólida para el título */
+}
+
+.envelope-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: var(--rosa-vibrante);
+    border: 4px solid var(--rosa-oscuro); /* Borde grueso estilo pixel */
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2); /* Sombra dura de videojuego */
+    cursor: pointer;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    /* Ajustamos las medidas para que encaje dentro del borde grueso */
+    border-left: 146px solid transparent;
+    border-right: 146px solid transparent;
+    border-top: 110px solid var(--rosa-medio);
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 3;
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 270px; /* Un poco más angosta que el sobre */
+    height: 0; /* Su altura es 0 hasta que se activa la animación */
+    background-color: white;
+    border: 4px solid var(--rosa-oscuro);
+    border-bottom: none; /* Para que parezca que sale de adentro */
+    transition: height 0.8s ease 0.6s; /* Espera 0.6s (a que se abra la solapa) para subir */
+    overflow: hidden;
+    z-index: 2;
+}
+
+.letter-content {
+    font-family: var(--fuente-normal); /* O la que estés usando */
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    padding: 20px 20px 80px 20px; 
+    opacity: 0;
+    transition: opacity 0.5s ease 1.4s;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.envelope-front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 146px solid transparent;
+    border-right: 146px solid transparent;
+    border-bottom: 110px solid var(--rosa-vibrante);
+    z-index: 4;
+    pointer-events: none; /* Permite que el click pase a través de él */
+}
+
+.open-flap {
+    transform: rotateX(180deg);
+    z-index: 1; /* Empuja la solapa hacia el fondo */
+    /* Mantiene la animación de giro de 0.6s, y cambia la capa (z-index) justo cuando termina de abrirse */
+    transition: transform 0.6s ease, z-index 0s 0.6s; 
+}
+.pull-letter {
+    height: 400px; /* Qué tan alto sube la carta */
+    bottom: 60px;  /* Se levanta un poco del sobre */
+}
+.show-text {
+    opacity: 1;
+}
+
+.pull-letter {
+    height: 400px; /* (O la altura que le hayas puesto) */
+    bottom: 60px;
+    overflow-y: auto; /* ¡Esto activa el scroll vertical si el texto es muy largo! */
+    overflow-x: hidden; /* Evita que se mueva hacia los lados accidentalmente */
+}
+
+.letter::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra */
+}
+
+.letter::-webkit-scrollbar-track {
+    background: white; /* Fondo del caminito */
+    border-left: 3px solid var(--rosa-oscuro); /* Línea que separa el scroll del texto */
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: var(--rosa-vibrante); /* Color del cuadrito que arrastras */
+    border: 3px solid var(--rosa-oscuro); /* Borde oscuro para el efecto pixel */
+    border-radius: 0; /* Bien cuadrado, sin curvas */
+}
+
+/*//////// AJUSTES CELULAR ///////*/
+
+@media (max-width: 600px), (max-height: 700px) {
+    #contenedor-musica {
+        top: 10px;   
+        right: 10px; 
+    }
+    #btn-musica {
+        font-size: 0.8rem; 
+        padding: 5px 8px;  
+        border: 2px solid var(--rosa-oscuro); 
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+    #btn-volver {
+        bottom: 10px;   
+        left: 10px; 
+        font-size: 0.8rem; 
+        padding: 5px 8px;  
+        border: 2px solid var(--rosa-oscuro); 
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
+    }
+@media (max-width: 600px), (max-height: 700px) {
+    .envelope-container {
+        margin-top: 80px; 
+        transform: scale(0.85); 
+    }
+    .pull-letter {
+        height: 360px; 
+        bottom: 50px;
+    }
+    .letter-content {
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+}

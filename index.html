@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <section class="parte-1">
+        <p class="texto1">🎉¡Feliz cumpleaños!💗</p>
+        <div class="cake-gif">
+            <img src="./gifs/gif-torta.gif" alt="Pastel">
+        </div>
+        <p class="texto1">¡haz click en la torta para la sorpresa!</p>
+    </section>
+
+    <div id="contenedor-musica">
+        <audio id="musica-fondo" loop>
+        <source src="./musica/ILLIT -bamsopoong-Instrumental.mp3" type="audio/mpeg">
+        </audio>
+        <button id="btn-musica">
+            🎵
+        </button>
+    </div>
+    
+    <button id="btn-volver">
+        ◀ 
+    </button>
+
+    <section id="parte-2">
+        <h2 class="titulo-carousel">¡¿En que momento pasaron tantos años?! ya otro cumpleaños, nuevas experiencias, nuevas anecdotas y se vienen muchas mas,es por eso que agradezco tener un registro de (casi) todas las nuestras ♥ </h2>
+        <div class="carousel">
+            <button class="nav-btn" id="btn-prev">❮</button>
+            <div class="polaroid" id="polaroid-card">
+            <img id="polaroid-img" src="" alt="Recuerdo">
+            </div>
+            <button class="nav-btn" id="btn-next">❯</button>
+        </div>
+        <h2 class="titulo-carousel">Sin embargo, esto no termina aqui... te queda una carta por leer</h2>
+        <button id="btn-carta">carta 💌</button>
+    </section>
+
+    <section id="parte3"> 
+        <h2 class="titulo-carta">Toca para abrirla</h2>
+        <div class="envelope-container" id="envelope">
+            <div class="flap" id="env-flap"></div>
+            <div class="letter" id="env-letter">
+                <div class="letter-content" id="env-text">
+                    Para ser sincera, no sé muy bien por dónde empezar, pero creo que lo principal es decirte ¡Feliz cumpleaños mi vida! 
+Esta vez quise hacerte algo un poquito más especial. Quizás no sea algo wooow, ni es un regalo físico, pero está hecho con mucho amor, dedicación (y frustración). Asique espero de corazón que este pequeño detalle te haya gustado. Eres una persona increíble, y espero que nunca lo olvides. Nunca conocí a alguien tan guerrera como vos, alguien que, incluso cuando las cosas se ponen difíciles, nunca baja los brazos y siempre encuentra la manera de seguir adelante, admiro muchísimo esa fortaleza que llevas dentro, incluso en esos momentos en los que quizás vos misma no te das cuenta de lo fuerte que eres.
+También quiero que sepas lo agradecida que estoy de que, además de ser mi prima, seas mi mejor amiga. Porque, aunque quizás no lo notes, eres una amiga, una hermana, una prima y hasta una tía increíble. Eres de esas personas que dejan una huella en la vida de los demás sin siquiera proponérselo, y estoy segura de que has sido una luz y una guía para muchas personas a lo largo de tu vida.
+Por eso, espero que esa luz que tienes nunca se apague. Que incluso en los días más difíciles, puedas recordar todo lo bueno que hay en vos y la cantidad de personas que te quieren, te admiran y agradecen tenerte en sus vidas.
+Siempre fuiste alguien a quien admiré, admiro y voy a admirar por muchísimo tiempo más. Me siento muy afortunada de poder compartir tantos momentos, recuerdos y etapas de mi vida con vos.
+Espero que tengas un cumpleaños hermoso, que disfrutes muchísimo tu día y que recibas todo el amor que mereces. Y, sobre todo, nunca olvides la gran persona sos.
+<br> <br> <br> <br>
+                </div>
+            </div>
+            <div class="envelope-front"></div>
+        </div>
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
