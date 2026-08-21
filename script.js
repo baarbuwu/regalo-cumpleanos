@@ -13,15 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnMusica = document.getElementById('btn-musica');
     const btnVolver = document.getElementById('btn-volver');
 
-    // ==========================================
+// ==========================================
     // PARTE 1: TRANSICIÓN DE LA TORTA
     // ==========================================
+    
+    seccion1.classList.add('transicion-suave');
+    seccion2.classList.add('transicion-suave');
+
     torta.addEventListener('click', () => {
-        seccion1.style.display = 'none';
-        seccion2.style.display = 'flex'; 
-        btnVolver.style.display = 'block'; // Aparece el botón de volver
-        audioFondo.play(); // Arranca la música
+        audioFondo.play(); 
         btnMusica.innerHTML = '⏸'; 
+        confetti({
+            particleCount: 150,
+            spread: 80,
+            origin: { y: 0.6 },
+            colors: ['#ff69b4', '#c71585', '#ffffff']
+        });
+        seccion1.classList.add('oculto-animado');
+        seccion2.classList.add('oculto-animado');
+        seccion2.style.display = 'flex'; 
+        setTimeout(() => {
+            seccion1.style.display = 'none'; 
+            seccion2.classList.remove('oculto-animado'); 
+        }, 800); 
     });
 
 
@@ -77,15 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarFoto();
     });
 
-    // ==========================================
+// ==========================================
     // PARTE 3: LA CARTA FINAL
     // ==========================================
     const btnCarta = document.getElementById('btn-carta');
     const sobre = document.getElementById('envelope');
 
+    // Agregamos la clase de animación a la carta
+    seccion3.classList.add('transicion-suave');
+
     btnCarta.addEventListener('click', () => {
-        seccion2.style.display = 'none';
+
+        seccion2.classList.add('oculto-animado');
+        
+        seccion3.classList.add('oculto-animado');
         seccion3.style.display = 'flex';
+
+        btnVolver.style.display = 'block';
+
+        setTimeout(() => {
+            seccion2.style.display = 'none';
+            seccion3.classList.remove('oculto-animado');
+        }, 800);
     });
 
     sobre.addEventListener('click', () => {
@@ -94,34 +121,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("env-text").classList.add("show-text");
     });
 
+// ==========================================
+    // BOTÓN DE VOLVER (SOLO DE CARTA A FOTOS)
     // ==========================================
-    // REPRODUCTOR DE MÚSICA
-    // ==========================================
+    btnVolver.addEventListener('click', () => {
+        if (seccion3.style.display === 'flex') {
+            seccion3.classList.add('oculto-animado');
+            seccion2.classList.add('oculto-animado');
+            seccion2.style.display = 'flex';
+            
+            setTimeout(() => {
+                seccion3.style.display = 'none';
+                seccion2.classList.remove('oculto-animado');
+                
+                // Ocultamos la flecha porque ya llegamos a las fotos
+                btnVolver.style.display = 'none'; 
+            }, 800);
+        } 
+    });
+
     btnMusica.addEventListener('click', () => {
         if (audioFondo.paused) {
             audioFondo.play(); 
-            btnMusica.innerHTML = '⏸'; 
+            btnMusica.innerHTML = '⏸'; // Cambia a pausa
         } else {
             audioFondo.pause(); 
-            btnMusica.innerHTML = '🎵'; 
-        }
-    }); // <-- Aquí estaba el error, faltaba esto.
-
-    // ==========================================
-    // BOTÓN DE VOLVER
-    // ==========================================
-    btnVolver.addEventListener('click', () => {
-        // Si estamos en la carta, volvemos a las fotos
-        if (seccion3.style.display === 'flex') {
-            seccion3.style.display = 'none';
-            seccion2.style.display = 'flex';
-        } 
-        // Si estamos en las fotos, volvemos a la torta
-        else if (seccion2.style.display === 'flex') {
-            seccion2.style.display = 'none';
-            seccion1.style.display = 'flex'; 
-            btnVolver.style.display = 'none'; // Ocultamos el botón
+            btnMusica.innerHTML = '🎵'; // Cambia a play
         }
     });
-
 }); 
