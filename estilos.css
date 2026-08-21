@@ -342,40 +342,68 @@ body {
     border-radius: 0; /* Bien cuadrado, sin curvas */
 }
 
+.tip-recarga {
+    font-family: var(--fuente-pixel); /* Usa tu fuente retro */
+    font-size: 0.8rem; 
+    color: var(--rosa-oscuro); /* O el color que uses para textos secundarios */
+    text-align: center;
+    margin-top: 30px; /* Separación del sobre */
+    opacity: 0.7; /* Lo hace un poco transparente para que no robe protagonismo */
+    letter-spacing: 1px;
+}
+
+.transicion-suave {
+    /* Le dice al navegador que cualquier cambio de visibilidad tarde 0.8 segundos */
+    transition: opacity 0.8s ease-in-out; 
+}
+
+.oculto-animado {
+    opacity: 0 !important; /* Se vuelve invisible */
+    pointer-events: none;  /* Evita que le den clicks fantasma mientras desaparece */
+}
+
 /*//////// AJUSTES CELULAR ///////*/
 
 @media (max-width: 600px), (max-height: 700px) {
+    
+    /* Reproductor y botón volver */
     #contenedor-musica {
         top: 10px;   
         right: 10px; 
     }
-    #btn-musica {
+    
+    #btn-musica, #btn-volver {
         font-size: 0.8rem; 
         padding: 5px 8px;  
         border: 2px solid var(--rosa-oscuro); 
         box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
     }
-}
 
     #btn-volver {
         bottom: 10px;   
         left: 10px; 
-        font-size: 0.8rem; 
-        padding: 5px 8px;  
-        border: 2px solid var(--rosa-oscuro); 
-        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
     }
-@media (max-width: 600px), (max-height: 700px) {
+
+    /* Carta y Sobre */
     .envelope-container {
         margin-top: 80px; 
         transform: scale(0.85); 
     }
+    
     .pull-letter {
         height: 360px; 
         bottom: 50px;
     }
+    
     .letter-content {
         font-size: 0.95rem;
         padding: 15px;
+    }
+
+    /* Tip de recarga */
+    .tip-recarga {
+        font-size: 0.7rem; 
+        margin-top: 20px;
+        padding: 0 15px; 
     }
 }
